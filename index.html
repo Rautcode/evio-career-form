@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Career Application Portal for Evio Pvt Ltd. Apply for open positions and join our team.">
+    <meta name="theme-color" content="#10b981">
+    <title>Evio Pvt Ltd - Career Application Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        :root {
+            /* Modern Green Color Palette */
+            --primary-green: #10b981;
+            --secondary-green: #34d399;
+            --dark-green: #047857;
+            --light-green: #d1fae5;
+            --accent-green: #6ee7b7;
+            --emerald: #059669;
+            
+            /* Supporting Colors */
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --success: #22c55e;
+            
+            /* Typography */
+            --font-family: 'Inter', 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing & Layout */
+            --container-width: 680px;
+            --border-radius: 16px;
+            --border-radius-small: 8px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            /* Shadows & Effects */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.12);
+            
+            /* Animations */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0f172a 75%, #374151 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Elements */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            bottom: 10%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(5deg); }
+            66% { transform: translateY(10px) rotate(-3deg); }
+        }
+
+        /* Main Container */
+        .form-container {
+            padding: var(--spacing-lg) var(--spacing-sm);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .form-card {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+            padding: var(--spacing-xl);
+            margin: 0 auto;
+            max-width: var(--container-width);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animated Border */
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--secondary-green), var(--accent-green));
+            background-size: 200% 100%;
+            animation: gradientFlow 3s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header Styles */
+        .header-section {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+        }
+
+        .company-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            border-radius: 50%;
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-lg);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .form-title {
+            color: var(--text-primary);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .form-description {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+            font-size: 1rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Form Styles */
+        .form-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            color: var(--primary-green);
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .section-title i {
+            font-size: 1.25rem;
+        }
+
+        .form-grid {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+
+        .form-grid.two-col {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .form-field {
+            position: relative;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: var(--font-weight-medium);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: var(--transition-fast);
+        }
+
+        .required-indicator {
+            color: var(--error);
+            margin-left: 2px;
+        }
+
+        /* Input Styles */
+        .input-wrapper {
+            position: relative;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(52, 211, 153, 0.2);
+            border-radius: var(--border-radius-small);
+            font-size: 1rem;
+            font-family: var(--font-family);
+            color: var(--text-primary);
+            transition: var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-field input:valid,
+        .form-field select:valid,
+        .form-field textarea:valid {
+            border-color: var(--success);
+        }
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* File Upload Styles */
+        .file-upload-area {
+            border: 2px dashed rgba(52, 211, 153, 0.3);
+            border-radius: var(--border-radius-small);
+            padding: var(--spacing-xl);
+            text-align: center;
+            background: rgba(15, 23, 42, 0.5);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-upload-area:hover {
+            border-color: var(--primary-green);
+            background: rgba(16, 185, 129, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .file-upload-area.drag-over {
+            border-color: var(--secondary-green);
+            background: rgba(52, 211, 153, 0.1);
+        }
+
+        .file-upload-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-sm);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .file-upload-text {
+            color: var(--text-primary);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .file-upload-hint {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Textarea Specific */
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Submit Button */
+        .submit-section {
+            margin-top: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            border: none;
+            padding: 18px 48px;
+            border-radius: var(--border-radius-small);
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+        }
+
+        .submit-button:hover::before {
+            left: 100%;
+        }
+
+        .submit-button:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Privacy Notice */
+        .privacy-notice {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-left: 4px solid var(--primary-green);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            border-radius: var(--border-radius-small);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .privacy-notice i {
+            color: var(--primary-green);
+            margin-right: var(--spacing-xs);
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(52, 211, 153, 0.2);
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .submit-button .loading-spinner {
+            border-width: 2px;
+            width: 1.2rem;
+            height: 1.2rem;
+        }        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: var(--spacing-sm);
+            }
+            
+            .form-card {
+                padding: var(--spacing-lg);
+            }
+            
+            .form-grid.two-col {
+                grid-template-columns: 1fr;
+            }
+            
+            .submit-button {
+                width: 100%;
+                padding: 16px 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-card {
+                padding: var(--spacing-md);
+                margin: var(--spacing-sm);
+            }
+            
+            .company-logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Success Animation */
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .success-animation {
+            animation: successPulse 0.6s ease-out;
+        }
+
+        /* Modern Scroll Bar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-green);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-element">
+            <i class="fas fa-bolt" style="font-size: 2rem; color: var(--primary-green);"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-cog" style="font-size: 1.5rem; color: var(--secondary-green);"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-microchip" style="font-size: 2.5rem; color: var(--accent-green);"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-chart-line" style="font-size: 1.8rem; color: var(--primary-green);"></i>
+        </div>
+    </div>
+
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-card">
+            <div class="header-section">
+                <div class="company-logo">
+                    <i class="fas fa-bolt" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <h1 class="form-title">Evio Pvt Ltd</h1>
+                <h2 class="form-subtitle">Career Application Portal</h2>
+                <p class="form-description">
+                    Join our team of electrical and automation experts! We're looking for passionate professionals 
+                    to help build the future of industrial automation. Fill in all required fields and upload your CV.
+                </p>
+            </div>
+
+            <!-- n8n Form - Connected to Production Application Form node -->
+            <form id="applicationForm" action="https://YOUR_ACTUAL_N8N_INSTANCE/webhook/evio-hr-production-form" method="post" enctype="multipart/form-data" crossorigin="anonymous">
+                <!-- Form ID for analytics and tracking -->
+                <input type="hidden" name="form_id" value="evio-prod-application-form">
+                <input type="hidden" name="submission_date" value="">
+                
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-user"></i>
+                        Personal Information
+                    </h3>
+                    
+                    <div class="form-grid two-col">
+                        <div class="form-field">
+                            <label for="fullName">
+                                Full Name <span class="required-indicator">*</span>
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">
+                                Email Address <span class="required-indicator">*</span>
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="email" id="email" name="Email Address" placeholder="your.email@domain.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-grid two-col">
+                        <div class="form-field">
+                            <label for="phone">
+                                Phone Number <span class="required-indicator">*</span>
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="tel" id="phone" name="Phone Number" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="location">
+                                Location/City <span class="required-indicator">*</span>
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="location" name="Location/City" placeholder="Your current location" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Information Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        Professional Information
+                    </h3>
+                    
+                    <div class="form-grid two-col">
+                        <div class="form-field">
+                            <label for="position">
+                                Position Applied For <span class="required-indicator">*</span>
+                            </label>
+                            <div class="input-wrapper">
+                                <select id="position" name="Position Applied For" required>
+                                    <option value="">Select Position</option>
+                                    <option value="Senior Electrical Engineer">Senior Electrical Engineer</option>
+                                    <option value="Automation Engineer">Automation Engineer</option>
+                                    <option value="Project Manager - Electrical">Project Manager - Electrical</option>
+                                    <option value="Controls Engineer">Controls Engineer</option>
+                                    <option value="PLC Programmer">PLC Programmer</option>
+                                    <option value="SCADA Engineer">SCADA Engineer</option>
+                                    <option value="Instrumentation Engineer">Instrumentation Engineer</option>
+                                    <option value="Field Service Technician">Field Service Technician</option>
+                                    <option value="Design Engineer - Electrical">Design Engineer - Electrical</option>
+                                    <option value="Site Supervisor">Site Supervisor</option>
+                                    <option value="Electrical Design Engineer">Electrical Design Engineer</option>
+                                    <option value="Power Systems Engineer">Power Systems Engineer</option>
+                                    <option value="HMI Developer">HMI Developer</option>
+                                    <option value="Panel Design Engineer">Panel Design Engineer</option>
+                                    <option value="Commissioning Engineer">Commissioning Engineer</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="experience">
+                                Years of Experience <span class="required-indicator">*</span>
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="number" id="experience" name="Years of Experience" placeholder="Enter years of experience (0-50)" min="0" max="50" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-grid two-col">
+                        <div class="form-field">
+                            <label for="salary">
+                                Expected Salary (Optional)
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="salary" name="Expected Salary (Optional)" placeholder="Expected salary range (e.g., 8-12 LPA)">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="notice">
+                                Notice Period
+                            </label>
+                            <div class="input-wrapper">
+                                <select id="notice" name="Notice Period">
+                                    <option value="">Select Notice Period</option>
+                                    <option value="Immediate">Immediate</option>
+                                    <option value="15 days">15 days</option>
+                                    <option value="1 month">1 month</option>
+                                    <option value="2 months">2 months</option>
+                                    <option value="3 months">3 months</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-file-upload"></i>
+                        Documents
+                    </h3>
+                    
+                    <div class="form-field">
+                        <label for="resume">
+                            Resume/CV <span class="required-indicator">*</span>
+                        </label>
+                        <div class="file-upload-area" id="resumeUpload">
+                            <i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+                            <div class="file-upload-text">Drag & drop your resume here</div>
+                            <div class="file-upload-hint">or click to browse (PDF, DOC, DOCX - Max 10MB)</div>
+                            <input type="file" id="resume" name="Resume/CV" class="file-input" accept=".pdf,.doc,.docx" required>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="coverLetter">
+                            Cover Letter (Optional)
+                        </label>
+                        <div class="input-wrapper">
+                            <textarea id="coverLetter" name="Cover Letter (Optional)" placeholder="Tell us why you'd like to work with Evio Pvt Ltd and what makes you a great fit for this role..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <button type="submit" class="submit-button" id="submitBtn">
+                        <span id="submitText">Submit Application</span>
+                    </button>
+                </div>
+
+                <div class="privacy-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <strong>Privacy & Data Protection:</strong> All submitted information is processed securely and in compliance with GDPR and data protection regulations. We'll review your application and get back to you within 48 hours. Your data will be used solely for recruitment purposes and will not be shared with third parties.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set the date field on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateField = document.querySelector('input[name="submission_date"]');
+            if (dateField) {
+                const now = new Date();
+                dateField.value = now.toISOString();
+            }
+            
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+            }, 100);
+        });
+
+        // Progress bar animation
+        function updateProgress() {
+            const form = document.getElementById('applicationForm');
+            const formData = new FormData(form);
+            const requiredFields = [
+                'Full Name', 
+                'Email Address', 
+                'Phone Number', 
+                'Position Applied For', 
+                'Years of Experience', 
+                'Location/City', 
+                'Resume/CV'
+            ];
+            let filledFields = 0;
+
+            requiredFields.forEach(field => {
+                if (formData.get(field) && formData.get(field).toString().trim() !== '') {
+                    filledFields++;
+                }
+            });
+
+            const progress = (filledFields / requiredFields.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // File upload functionality
+        const fileUploadArea = document.getElementById('resumeUpload');
+        const fileInput = document.getElementById('resume');
+
+        fileUploadArea.addEventListener('click', () => fileInput.click());
+
+        fileUploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileUploadArea.classList.add('drag-over');
+        });
+
+        fileUploadArea.addEventListener('dragleave', () => {
+            fileUploadArea.classList.remove('drag-over');
+        });
+
+        fileUploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileUploadArea.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                updateFileDisplay(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                updateFileDisplay(e.target.files[0]);
+            }
+        });
+
+        function updateFileDisplay(file) {
+            const uploadText = document.querySelector('.file-upload-text');
+            const uploadHint = document.querySelector('.file-upload-hint');
+            const uploadIcon = document.querySelector('.file-upload-icon');
+
+            // File size validation
+            if (file.size > 10 * 1024 * 1024) { // 10MB
+                uploadIcon.className = 'fas fa-exclamation-triangle file-upload-icon';
+                uploadIcon.style.color = 'var(--error)';
+                uploadText.textContent = 'File is too large!';
+                uploadHint.textContent = 'Please select a file smaller than 10MB';
+                return;
+            }
+
+            // File type validation
+            const allowedTypes = ['.pdf', '.doc', '.docx'];
+            const extension = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+            if (!allowedTypes.includes(extension)) {
+                uploadIcon.className = 'fas fa-exclamation-triangle file-upload-icon';
+                uploadIcon.style.color = 'var(--error)';
+                uploadText.textContent = 'Invalid file type!';
+                uploadHint.textContent = 'Please select a PDF, DOC, or DOCX file';
+                return;
+            }
+
+            // Success display
+            uploadIcon.className = 'fas fa-check-circle file-upload-icon';
+            uploadIcon.style.color = 'var(--success)';
+            uploadText.textContent = file.name;
+            uploadHint.textContent = `File size: ${(file.size / 1024 / 1024).toFixed(2)}MB`;
+        }
+
+        // Form validation and submission
+        const form = document.getElementById('applicationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+
+        form.addEventListener('input', updateProgress);
+        form.addEventListener('change', updateProgress);
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Disable submit button and show loading
+            submitBtn.disabled = true;
+            submitText.innerHTML = '<div class="loading-spinner"></div>Submitting...';
+            
+            try {
+                // Prepare form data for submission to n8n
+                const formData = new FormData(form);
+                
+                // Check file size - n8n has limits
+                const resumeFile = formData.get('Resume/CV');
+                if (resumeFile && resumeFile.size > 10 * 1024 * 1024) {
+                    throw new Error('Resume file is too large. Maximum size is 10MB.');
+                }
+                
+                // Submit the form to n8n webhook
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*'
+                    },
+                    credentials: 'same-origin'
+                });
+                
+                if (!response.ok) {
+                    console.error('Form submission error:', response.status, response.statusText);
+                    throw new Error(`Form submission failed with status ${response.status}. Please try again later.`);
+                }
+                
+                // Try to get response data if available
+                let responseData;
+                try {
+                    responseData = await response.json();
+                    console.log('Response data:', responseData);
+                } catch (err) {
+                    // Response may not be JSON, which is fine
+                    console.log('Response is not JSON or is empty');
+                }
+                
+                // Success animation
+                document.querySelector('.form-card').classList.add('success-animation');
+                
+                // Update button to show success
+                submitText.innerHTML = '<i class="fas fa-check"></i> Application Submitted!';
+                submitBtn.style.background = 'linear-gradient(135deg, var(--success), #22c55e)';
+                
+                // Show success message
+                setTimeout(() => {
+                    alert('Thank you! Your application has been submitted successfully. We will review your application and get back to you within 48 hours.');
+                    
+                    // Reset form after success
+                    setTimeout(() => {
+                        form.reset();
+                        updateProgress();
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Submit Application';
+                        submitBtn.style.background = 'linear-gradient(135deg, var(--primary-green), var(--secondary-green))';
+                        
+                        // Reset file upload display
+                        const uploadIcon = document.querySelector('.file-upload-icon');
+                        const uploadText = document.querySelector('.file-upload-text');
+                        const uploadHint = document.querySelector('.file-upload-hint');
+                        
+                        uploadIcon.className = 'fas fa-cloud-upload-alt file-upload-icon';
+                        uploadIcon.style.color = 'var(--primary-green)';
+                        uploadText.textContent = 'Drag & drop your resume here';
+                        uploadHint.textContent = 'or click to browse (PDF, DOC, DOCX - Max 10MB)';
+                        
+                        document.querySelector('.form-card').classList.remove('success-animation');
+                    }, 2000);
+                }, 1000);
+            } catch (error) {
+                // Handle errors
+                submitText.textContent = 'Submit Application';
+                submitBtn.disabled = false;
+                alert(`Error: ${error.message}`);
+            }
+        });
+
+        // Real-time validation
+        const inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateField);
+            input.addEventListener('input', validateField);
+        });
+
+        function validateField(e) {
+            const field = e.target;
+            const isValid = field.checkValidity();
+            
+            if (isValid) {
+                field.style.borderColor = 'var(--success)';
+            } else if (field.value.trim() !== '') {
+                field.style.borderColor = 'var(--error)';
+            }
+        }
+
+        // Smooth scroll to top on load
+        window.addEventListener('load', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            updateProgress();
+        });
+
+        // Enhanced animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        // Observe form sections
+        document.querySelectorAll('.form-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + Enter to submit
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                if (!submitBtn.disabled) {
+                    form.requestSubmit();
+                }
+            }
+        });
+
+        // Auto-save to session storage
+        let formData = {};
+        
+        function saveFormData() {
+            const formElements = form.querySelectorAll('input, select, textarea');
+            formElements.forEach(element => {
+                if (element.type !== 'file') {
+                    formData[element.name] = element.value;
+                    // Use sessionStorage instead of localStorage for security
+                    try {
+                        sessionStorage.setItem('evioFormData', JSON.stringify(formData));
+                    } catch (e) {
+                        console.error('Session storage error:', e);
+                    }
+                }
+            });
+        }
+
+        function loadFormData() {
+            try {
+                const savedData = sessionStorage.getItem('evioFormData');
+                if (savedData) {
+                    formData = JSON.parse(savedData);
+                    Object.keys(formData).forEach(key => {
+                        const element = form.querySelector(`[name="${key}"]`);
+                        if (element && element.type !== 'file') {
+                            element.value = formData[key];
+                        }
+                    });
+                }
+            } catch (e) {
+                console.error('Error loading saved form data:', e);
+            }
+            updateProgress();
+        }
+
+        // Save form data on input
+        form.addEventListener('input', saveFormData);
+        form.addEventListener('change', saveFormData);
+        
+        // Load saved form data
+        document.addEventListener('DOMContentLoaded', loadFormData);
+
+        // Mobile optimizations
+        if (window.innerWidth <= 768) {
+            // Reduce animation intensity on mobile
+            document.documentElement.style.setProperty('--transition-normal', 'all 0.2s ease');
+            
+            // Optimize touch interactions
+            const touchElements = document.querySelectorAll('button, .file-upload-area, input, select, textarea');
+            touchElements.forEach(element => {
+                element.style.minHeight = '44px'; // Minimum touch target size
+            });
+        }
+
+        // Add hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll('input, select, textarea, button, .file-upload-area');
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.style.transform = 'translateY(-1px)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                if (!element.matches(':focus')) {
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Enhanced focus management
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // Add CSS for keyboard navigation
+        const style = document.createElement('style');
+        style.textContent = `
+            .keyboard-navigation *:focus {
+                outline: 2px solid var(--primary-green) !important;
+                outline-offset: 2px !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Performance optimization: debounced resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateProgress();
+            }, 250);
+        });
+
+        // Initialize form
+        updateProgress();
+    </script>
+</body>
+</html>
