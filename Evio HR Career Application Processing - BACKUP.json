@@ -31,64 +31,32 @@
               "fieldOptions": {
                 "values": [
                   {
-                    "value": "Senior Electrical Engineer",
-                    "name": "Senior Electrical Engineer"
+                    "value": "Electrical Engineer",
+                    "name": "Electrical Engineer"
                   },
                   {
                     "value": "Automation Engineer",
                     "name": "Automation Engineer"
                   },
                   {
-                    "value": "Project Manager - Electrical",
-                    "name": "Project Manager - Electrical"
-                  },
-                  {
-                    "value": "Controls Engineer",
-                    "name": "Controls Engineer"
-                  },
-                  {
                     "value": "PLC Programmer",
                     "name": "PLC Programmer"
                   },
                   {
-                    "value": "SCADA Engineer",
-                    "name": "SCADA Engineer"
+                    "value": "SCADA Developer",
+                    "name": "SCADA Developer"
+                  },
+                  {
+                    "value": "Project Manager",
+                    "name": "Project Manager"
                   },
                   {
                     "value": "Instrumentation Engineer",
                     "name": "Instrumentation Engineer"
                   },
                   {
-                    "value": "Field Service Technician",
-                    "name": "Field Service Technician"
-                  },
-                  {
-                    "value": "Design Engineer - Electrical",
-                    "name": "Design Engineer - Electrical"
-                  },
-                  {
-                    "value": "Site Supervisor",
-                    "name": "Site Supervisor"
-                  },
-                  {
-                    "value": "Electrical Design Engineer",
-                    "name": "Electrical Design Engineer"
-                  },
-                  {
-                    "value": "Power Systems Engineer",
-                    "name": "Power Systems Engineer"
-                  },
-                  {
-                    "value": "HMI Developer",
-                    "name": "HMI Developer"
-                  },
-                  {
-                    "value": "Panel Design Engineer",
-                    "name": "Panel Design Engineer"
-                  },
-                  {
-                    "value": "Commissioning Engineer",
-                    "name": "Commissioning Engineer"
+                    "value": "Field Service Engineer",
+                    "name": "Field Service Engineer"
                   }
                 ]
               },
@@ -172,7 +140,7 @@
         400,
         400
       ],
-      "webhookId": "ccac6ec5-9118-471b-b371-daba5ed3a9a8",
+      "webhookId": "evio-hr-production-form",
       "typeVersion": 2.2
     },
     {

@@ -7,7 +7,7 @@ This project contains an HTML form designed to work with n8n's Form Trigger node
 ### 1. n8n Configuration
 
 1. Ensure your n8n instance is properly set up with the Form Trigger node.
-2. Make note of your webhook URL which should be in the format: `https://your-n8n-instance.com/webhook/evio-hr-production-form`
+2. Make note of your form URL which should be in the format: `https://your-n8n-instance.com/form/ccac6ec5-9118-471b-b371-daba5ed3a9a8`
 3. Enable CORS in your n8n setup to allow requests from your Vercel domain (once deployed).
 
 ### 2. Form Configuration
@@ -15,7 +15,7 @@ This project contains an HTML form designed to work with n8n's Form Trigger node
 Before deploying, update the form action URL in `evio-modern-hr-form.html`:
 
 1. Open `evio-modern-hr-form.html`
-2. Find the line containing: `<form id="applicationForm" action="https://YOUR_N8N_INSTANCE_URL/webhook/evio-hr-production-form"`
+2. Find the line containing: `<form id="applicationForm" action="https://YOUR_N8N_INSTANCE_URL/form/ccac6ec5-9118-471b-b371-daba5ed3a9a8"`
 3. Replace `YOUR_N8N_INSTANCE_URL` with the actual URL of your n8n instance.
 
 ### 3. GitHub and Vercel Deployment
