@@ -585,9 +585,10 @@
             </div>
 
             <!-- n8n Form - Connected to Production Application Form node -->
-            <form id="applicationForm" action="https://your-n8n-instance.com/webhook/evio-hr-production-form" method="post" enctype="multipart/form-data" crossorigin="anonymous">
+            <form id="applicationForm" action="https://evio-career-form.vercel.app/webhook/evio-hr-production-form" method="post" enctype="multipart/form-data" crossorigin="anonymous">
                 <!-- Form ID for analytics and tracking -->
                 <input type="hidden" name="form_id" value="evio-prod-application-form">
+                <input type="hidden" name="origin" value="https://evio-career-form.vercel.app">
                 <input type="hidden" name="submission_date" value="">
                 
                 <!-- Personal Information Section -->
@@ -844,7 +845,8 @@
             // File type validation
             const allowedTypes = ['.pdf', '.doc', '.docx'];
             const extension = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
-            if (!allowedTypes.includes(extension)) {
+            console.log("File extension:", extension, "Allowed types:", allowedTypes, "Includes?", allowedTypes.includes(extension));
+            if (!allowedTypes.some(type => extension.endsWith(type))) {
                 uploadIcon.className = 'fas fa-exclamation-triangle file-upload-icon';
                 uploadIcon.style.color = 'var(--error)';
                 uploadText.textContent = 'Invalid file type!';
