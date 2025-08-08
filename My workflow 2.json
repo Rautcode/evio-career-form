@@ -173,7 +173,7 @@
         "folderId": {
           "__rl": true,
           "mode": "list",
-          "value": "1A2B3C4D5E6F7G8H9I0J-evio-hr-applications-prod"
+          "value": "1eRTb67HjK8LmN9Pq5sZxVa3yWc2DfGhP"
         },
         "options": {}
       },
@@ -196,7 +196,7 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1A2B3C4D5E6F7G8H9I0J-evio-job-roles-prod-database",
+          "value": "1xVzG8qJbY7mWpTf5Rc9Ha3dLs4kNeP7t",
           "mode": "id"
         },
         "sheetName": {
@@ -421,7 +421,7 @@
         "documentId": {
           "__rl": true,
           "mode": "list",
-          "value": "1A2B3C4D5E6F7G8H9I0J-evio-candidate-evaluation-prod-log",
+          "value": "1pQrSt2uVwXyZ3A4B5C6DeFgHiJk7LmN",
           "cachedResultName": "Evio Candidate Evaluations Production"
         },
         "sheetName": {
@@ -514,8 +514,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio.com",
-        "toEmail": "hiring-manager@evio.com, hr-team@evio.com",
+        "fromEmail": "hr@evio-industrial.com",
+        "toEmail": "hiring-manager@evio-industrial.com, hr-team@evio-industrial.com",
         "subject": "🌟 Highly Recommended Candidate: {{ $('Candidate Application Form').item.json['Full Name'] || 'Unknown Candidate' }} - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }}",
         "options": {}
       },
@@ -531,8 +531,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio.com",
-        "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio.com' }}",
+        "fromEmail": "hr@evio-industrial.com",
+        "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
         "subject": "Application Received - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
         "options": {}
       },
@@ -548,8 +548,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio.com",
-        "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio.com' }}",
+        "fromEmail": "hr@evio-industrial.com",
+        "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
         "subject": "❌ Application Issue - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
         "options": {}
       },
@@ -565,8 +565,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio.com",
-        "toEmail": "hiring-manager@evio.com, hr-team@evio.com",
+        "fromEmail": "hr@evio-industrial.com",
+        "toEmail": "hiring-manager@evio-industrial.com, hr-team@evio-industrial.com",
         "subject": "⚠️ No Matching Job Role Found - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Unknown Position' }}",
         "options": {}
       },
@@ -653,8 +653,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "alerts@evio.com",
-        "toEmail": "sysadmin@evio.com, hr-manager@evio.com",
+        "fromEmail": "alerts@evio-industrial.com",
+        "toEmail": "sysadmin@evio-industrial.com, hr-manager@evio-industrial.com",
         "subject": "🚨 PRODUCTION ALERT: HR Processing Failure - {{ $json['Full Name'] || 'Unknown Candidate' }}",
         "options": {}
       },
@@ -674,7 +674,7 @@
         "documentId": {
           "__rl": true,
           "mode": "list",
-          "value": "1A2B3C4D5E6F7G8H9I0J-evio-audit-log-prod",
+          "value": "1rStUvWxYz2A3B4C5D6EfGhIjK7LmNoP",
           "cachedResultName": "Evio Production Audit Log"
         },
         "sheetName": {
