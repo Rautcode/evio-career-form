@@ -1,5 +1,5 @@
 {
-  "name": "My workflow 2",
+  "name": "Evio HR Career Application Processing - PRODUCTION",
   "nodes": [
     {
       "parameters": {
@@ -514,8 +514,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio-industrial.com",
-        "toEmail": "hiring-manager@evio-industrial.com, hr-team@evio-industrial.com",
+        "fromEmail": "manav@evio.in",
+        "toEmail": "manav.p.raut27@gmail.com",
         "subject": "🌟 Highly Recommended Candidate: {{ $('Candidate Application Form').item.json['Full Name'] || 'Unknown Candidate' }} - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }}",
         "options": {}
       },
@@ -531,7 +531,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio-industrial.com",
+        "fromEmail": "manav@evio.in",
         "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
         "subject": "Application Received - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
         "options": {}
@@ -548,7 +548,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio-industrial.com",
+        "fromEmail": "manav@evio.in",
         "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
         "subject": "❌ Application Issue - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
         "options": {}
@@ -565,8 +565,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "hr@evio-industrial.com",
-        "toEmail": "hiring-manager@evio-industrial.com, hr-team@evio-industrial.com",
+        "fromEmail": "manav@evio.in",
+        "toEmail": "manav.p.raut27@gmail.com",
         "subject": "⚠️ No Matching Job Role Found - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Unknown Position' }}",
         "options": {}
       },
@@ -653,8 +653,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "alerts@evio-industrial.com",
-        "toEmail": "sysadmin@evio-industrial.com, hr-manager@evio-industrial.com",
+        "fromEmail": "manav@evio.in",
+        "toEmail": "manav.p.raut27@gmail.com",
         "subject": "🚨 PRODUCTION ALERT: HR Processing Failure - {{ $json['Full Name'] || 'Unknown Candidate' }}",
         "options": {}
       },
