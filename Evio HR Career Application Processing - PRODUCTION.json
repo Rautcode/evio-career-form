@@ -241,7 +241,9 @@
           ],
           "combinator": "and"
         },
-        "options": {}
+        "options": {
+          "convertTypes": true
+        }
       },
       "id": "e7557a3b-4f9f-4069-9003-cf6d590e9c31",
       "name": "Production Security Validation",
@@ -450,7 +452,9 @@
             }
           ]
         },
-        "options": {}
+        "options": {
+          "convertTypes": true
+        }
       },
       "id": "93c81c59-d8e0-4ba7-b819-61ed4ba5f466",
       "name": "Check Job Match Found",
@@ -710,7 +714,9 @@
             }
           ]
         },
-        "options": {}
+        "options": {
+          "convertTypes": true
+        }
       },
       "id": "028ed36e-0b57-4ec2-8811-693c7066d363",
       "name": "Check If Highly Recommended",
@@ -852,7 +858,9 @@
             }
           ]
         },
-        "options": {}
+        "options": {
+          "convertTypes": true
+        }
       },
       "id": "5dc3f3cc-b5eb-4b36-b7b1-0ceaa8739b42",
       "name": "Production Success Validator",
