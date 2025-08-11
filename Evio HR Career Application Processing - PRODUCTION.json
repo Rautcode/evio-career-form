@@ -186,7 +186,7 @@
           "conditions": [
             {
               "id": "resume-exists",
-              "leftValue": "={{ $json['Resume/CV'] || $json.name || $json.data }}",
+              "leftValue": "={{ Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0] : ($json['Resume/CV'] || $json.name || $json.data) }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
@@ -195,7 +195,7 @@
             },
             {
               "id": "file-size-check",
-              "leftValue": "={{ Number(($json['Resume/CV'] && $json['Resume/CV'].fileSize) || ($json.size || '0')) }}",
+              "leftValue": "={{ Number(Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0].size : (($json['Resume/CV'] && $json['Resume/CV'].fileSize) || ($json.size || '0'))) }}",
               "rightValue": 10485760,
               "operator": {
                 "type": "number",
@@ -204,7 +204,7 @@
             },
             {
               "id": "file-type-check",
-              "leftValue": "={{ ($json['Resume/CV'] && $json['Resume/CV'].fileName) || $json.name || $json.fileName || '' }}",
+              "leftValue": "={{ Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0].filename : (($json['Resume/CV'] && $json['Resume/CV'].fileName) || $json.name || $json.fileName || '') }}",
               "rightValue": "\\.(pdf|doc|docx)$",
               "operator": {
                 "type": "string",
@@ -261,15 +261,15 @@
           "string": [
             {
               "name": "original_filename",
-              "value": "={{ $json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || 'unknown_file.pdf') }}"
+              "value": "={{ Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0].filename : ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || 'unknown_file.pdf')) }}"
             },
             {
               "name": "file_extension",
-              "value": "={{ ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || '')).split('.').pop().toLowerCase() }}"
+              "value": "={{ (Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0].filename : ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || ''))).split('.').pop().toLowerCase() }}"
             },
             {
               "name": "processed_filename",
-              "value": "={{ $now.format('YYYY-MM-DD') + '_' + ($json['Full Name'] || 'Unknown').replace(/[^a-zA-Z0-9]/g, '_') + '_' + $randomInt(1000, 9999) + '.' + ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || '')).split('.').pop().toLowerCase() }}"
+              "value": "={{ $now.format('YYYY-MM-DD') + '_' + ($json['Full Name'] || 'Unknown').replace(/[^a-zA-Z0-9]/g, '_') + '_' + $randomInt(1000, 9999) + '.' + (Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0].filename : ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || ''))).split('.').pop().toLowerCase() }}"
             },
             {
               "name": "candidate_source",
@@ -331,7 +331,7 @@
     {
       "parameters": {
         "operation": "pdf",
-        "binaryPropertyName": "={{ $json['Resume/CV'] ? 'Resume/CV' : 'data' }}",
+        "binaryPropertyName": "={{ Array.isArray($json['Resume/CV']) ? 'Resume/CV' : ($json['Resume/CV'] ? 'Resume/CV' : 'data') }}",
         "options": {
           "maxPages": 10
         },
@@ -374,7 +374,7 @@
     },
     {
       "parameters": {
-        "inputDataFieldName": "={{ $json['Resume/CV'] ? 'Resume/CV' : 'data' }}",
+        "inputDataFieldName": "={{ Array.isArray($json['Resume/CV']) ? 'Resume/CV' : ($json['Resume/CV'] ? 'Resume/CV' : 'data') }}",
         "name": "={{ $json.processed_filename || ($now.format('yyyy-MM-dd') + '_' + ($json.original_filename || 'Unknown_File').replace(/[^a-zA-Z0-9]/g, '_') + '_' + $randomInt(1000, 9999)) }}",
         "driveId": {
           "__rl": true,
