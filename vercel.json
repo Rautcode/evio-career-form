@@ -7,9 +7,8 @@
     }
   ],
   "routes": [
-    { "src": "/", "dest": "/evio-modern-hr-form.html" },
-    { "src": "/index.html", "dest": "/evio-modern-hr-form.html" },
-    { "src": "/form", "dest": "/evio-modern-hr-form.html" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/form", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ],
   "headers": [

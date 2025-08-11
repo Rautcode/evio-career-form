@@ -7,6 +7,7 @@ echo Preparing files for deployment...
 if exist deploy_temp rmdir /s /q deploy_temp
 mkdir deploy_temp
 copy evio-modern-hr-form.html deploy_temp\index.html
+copy evio-modern-hr-form.html deploy_temp\evio-modern-hr-form.html
 copy vercel.json deploy_temp\
 
 echo Files prepared in the 'deploy_temp' folder. Please follow these steps:

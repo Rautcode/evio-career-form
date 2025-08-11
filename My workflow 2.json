@@ -20,9 +20,8 @@
             },
             {
               "fieldLabel": "Phone Number",
-              "fieldType": "string",
-              "placeholder": "+91",
-              "description": "Enter your phone number with country code",
+              "fieldType": "number",
+              "placeholder": "+91 98765 43210",
               "requiredField": true
             },
             {
@@ -30,66 +29,7 @@
               "fieldType": "dropdown",
               "fieldOptions": {
                 "values": [
-                  {
-                    "value": "Senior Electrical Engineer",
-                    "name": "Senior Electrical Engineer"
-                  },
-                  {
-                    "value": "Automation Engineer",
-                    "name": "Automation Engineer"
-                  },
-                  {
-                    "value": "Project Manager - Electrical",
-                    "name": "Project Manager - Electrical"
-                  },
-                  {
-                    "value": "Controls Engineer",
-                    "name": "Controls Engineer"
-                  },
-                  {
-                    "value": "PLC Programmer",
-                    "name": "PLC Programmer"
-                  },
-                  {
-                    "value": "SCADA Engineer",
-                    "name": "SCADA Engineer"
-                  },
-                  {
-                    "value": "Instrumentation Engineer",
-                    "name": "Instrumentation Engineer"
-                  },
-                  {
-                    "value": "Field Service Technician",
-                    "name": "Field Service Technician"
-                  },
-                  {
-                    "value": "Design Engineer - Electrical",
-                    "name": "Design Engineer - Electrical"
-                  },
-                  {
-                    "value": "Site Supervisor",
-                    "name": "Site Supervisor"
-                  },
-                  {
-                    "value": "Electrical Design Engineer",
-                    "name": "Electrical Design Engineer"
-                  },
-                  {
-                    "value": "Power Systems Engineer",
-                    "name": "Power Systems Engineer"
-                  },
-                  {
-                    "value": "HMI Developer",
-                    "name": "HMI Developer"
-                  },
-                  {
-                    "value": "Panel Design Engineer",
-                    "name": "Panel Design Engineer"
-                  },
-                  {
-                    "value": "Commissioning Engineer",
-                    "name": "Commissioning Engineer"
-                  }
+                  {}
                 ]
               },
               "requiredField": true
@@ -122,46 +62,12 @@
             },
             {
               "fieldLabel": "Notice Period",
-              "fieldType": "select",
-              "fieldOptions": {
-                "values": [
-                  {
-                    "value": "Immediate",
-                    "name": "Immediate"
-                  },
-                  {
-                    "value": "15 Days",
-                    "name": "15 Days"
-                  },
-                  {
-                    "value": "30 Days",
-                    "name": "30 Days"
-                  },
-                  {
-                    "value": "60 Days",
-                    "name": "60 Days"
-                  },
-                  {
-                    "value": "90 Days",
-                    "name": "90 Days or more"
-                  }
-                ]
-              }
-            },
-            {
-              "fieldLabel": "Data Processing Consent",
-              "fieldType": "boolean",
-              "description": "I consent to Evio Pvt Ltd processing my personal data for recruitment purposes. I understand that my data will be stored securely and not shared with third parties without my consent.",
-              "requiredField": true,
-              "defaultValue": false
+              "fieldType": "select"
             }
           ]
         },
         "options": {
           "appendAttribution": false,
-          "thankYouText": "Thank you for applying to Evio Pvt Ltd!",
-          "thankYouDescription": "Your application has been received successfully. Our HR team will review your details and get back to you within 48 hours. Your application reference number is {{$json.application_id}}.",
-          "redirectUrl": "",
           "customCss": ":root {\n  /* Evio Production Brand Colors */\n  --evio-primary: #1e40af;\n  --evio-secondary: #f59e0b;\n  --evio-accent: #10b981;\n  --evio-dark: #1f2937;\n  --evio-light: #f8fafc;\n  --evio-error: #ef4444;\n  --evio-success: #10b981;\n  \n  /* Production Typography */\n  --font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;\n  --font-weight-normal: 400;\n  --font-weight-medium: 500;\n  --font-weight-semibold: 600;\n  --font-weight-bold: 700;\n  \n  /* Production Layout */\n  --container-width: 650px;\n  --border-radius: 12px;\n  --border-radius-small: 6px;\n  --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);\n  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: var(--font-family);\n  background: linear-gradient(135deg, var(--evio-primary) 0%, var(--evio-secondary) 100%);\n  min-height: 100vh;\n}\n\n.form-container {\n  padding: 2rem 1rem;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.form-card {\n  background: white;\n  border-radius: var(--border-radius);\n  box-shadow: var(--box-shadow);\n  padding: 3rem;\n  margin: 0 auto;\n  max-width: var(--container-width);\n  width: 100%;\n  position: relative;\n  overflow: hidden;\n}\n\n.form-card::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 4px;\n  background: linear-gradient(90deg, var(--evio-primary), var(--evio-accent));\n}\n\n.form-title {\n  color: var(--evio-primary);\n  font-size: 2.25rem;\n  font-weight: var(--font-weight-bold);\n  text-align: center;\n  margin-bottom: 1rem;\n  line-height: 1.2;\n}\n\n.form-description {\n  color: #6b7280;\n  text-align: center;\n  margin-bottom: 2.5rem;\n  line-height: 1.6;\n  font-size: 1.1rem;\n}\n\n.form-field {\n  margin-bottom: 1.5rem;\n}\n\n.form-field label {\n  display: block;\n  margin-bottom: 0.5rem;\n  font-weight: var(--font-weight-medium);\n  color: var(--evio-dark);\n}\n\n.form-field input,\n.form-field select,\n.form-field textarea {\n  width: 100%;\n  padding: 12px 16px;\n  border: 2px solid #e5e7eb;\n  border-radius: var(--border-radius-small);\n  font-size: 1rem;\n  transition: var(--transition);\n  font-family: var(--font-family);\n}\n\n.form-field input:focus,\n.form-field select:focus,\n.form-field textarea:focus {\n  outline: none;\n  border-color: var(--evio-primary);\n  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);\n}\n\n.form-field input:invalid {\n  border-color: var(--evio-error);\n}\n\n.submit-button {\n  background: linear-gradient(135deg, var(--evio-primary), var(--evio-accent));\n  color: white;\n  border: none;\n  padding: 16px 32px;\n  border-radius: var(--border-radius-small);\n  font-size: 1.1rem;\n  font-weight: var(--font-weight-semibold);\n  cursor: pointer;\n  transition: var(--transition);\n  width: 100%;\n  margin-top: 1rem;\n}\n\n.submit-button:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);\n}\n\n.privacy-notice {\n  background: #f8f9fa;\n  border-left: 4px solid var(--evio-accent);\n  padding: 1rem;\n  margin-top: 2rem;\n  border-radius: var(--border-radius-small);\n  font-size: 0.9rem;\n  color: #6b7280;\n}\n\n@media (max-width: 768px) {\n  .form-container {\n    padding: 1rem;\n  }\n  \n  .form-card {\n    padding: 2rem;\n  }\n  \n  .form-title {\n    font-size: 1.875rem;\n  }\n}"
         }
       },
@@ -172,7 +78,7 @@
         400,
         400
       ],
-      "webhookId": "ccac6ec5-9118-471b-b371-daba5ed3a9a8",
+      "webhookId": "evio-hr-production-form",
       "typeVersion": 2.2
     },
     {
@@ -195,7 +101,7 @@
             },
             {
               "id": "file-size-check",
-              "leftValue": "={{ Number(($json['Resume/CV'] && $json['Resume/CV'].fileSize) || ($json.size || '0')) }}",
+              "leftValue": "={{ ($json['Resume/CV'] && $json['Resume/CV'].fileSize) || ($json.size || 0) }}",
               "rightValue": 10485760,
               "operator": {
                 "type": "number",
@@ -209,33 +115,6 @@
               "operator": {
                 "type": "string",
                 "operation": "regex"
-              }
-            },
-            {
-              "id": "email-format-check",
-              "leftValue": "={{ $json['Email Address'] || '' }}",
-              "rightValue": "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$",
-              "operator": {
-                "type": "string",
-                "operation": "regex"
-              }
-            },
-            {
-              "id": "phone-length-check",
-              "leftValue": "={{ Number(($json['Phone Number'] || '').toString().replace(/[^0-9+]/g, '').length) }}",
-              "rightValue": 6,
-              "operator": {
-                "type": "number",
-                "operation": "gte"
-              }
-            },
-            {
-              "id": "consent-check",
-              "leftValue": "={{ $json['Data Processing Consent'] === true || $json['Data Processing Consent'] === 'true' || $json['Data Processing Consent'] === 'True' }}",
-              "rightValue": "true",
-              "operator": {
-                "type": "string",
-                "operation": "equals"
               }
             }
           ],
@@ -254,36 +133,7 @@
     },
     {
       "parameters": {
-        "keepOnlySet": false,
-        "values": {
-          "string": [
-            {
-              "name": "original_filename",
-              "value": "={{ $json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || 'unknown_file.pdf') }}"
-            },
-            {
-              "name": "file_extension",
-              "value": "={{ ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || '')).split('.').pop().toLowerCase() }}"
-            },
-            {
-              "name": "processed_filename",
-              "value": "={{ $now.format('YYYY-MM-DD') + '_' + ($json['Full Name'] || 'Unknown').replace(/[^a-zA-Z0-9]/g, '_') + '_' + $randomInt(1000, 9999) + '.' + ($json['Resume/CV'] ? $json['Resume/CV'].fileName : ($json.name || '')).split('.').pop().toLowerCase() }}"
-            },
-            {
-              "name": "candidate_source",
-              "value": "WEBSITE_FORM"
-            }
-          ],
-          "number": [
-            {
-              "name": "submission_timestamp",
-              "value": "={{ $now.valueOf() }}"
-            }
-          ]
-        },
-        "options": {
-          "dotNotation": true
-        }
+        "options": {}
       },
       "id": "1a9b6625-7588-4104-9119-221f3412f185",
       "name": "Production Data Normalization",
@@ -296,44 +146,11 @@
     },
     {
       "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "application_id",
-              "value": "={{ 'EVIO-' + $now.format('YYYYMMDD') + '-' + $randomInt(1000, 9999) }}"
-            },
-            {
-              "name": "security_scan_status",
-              "value": "PASSED"
-            },
-            {
-              "name": "data_classification",
-              "value": "CONFIDENTIAL"
-            }
-          ]
-        },
-        "options": {
-          "dotNotation": true
-        }
-      },
-      "id": "a45d8e25-9fb4-4b2c-a46d-7e8c9d7a1ba5",
-      "name": "Application ID Generator",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        864,
-        480
-      ],
-      "typeVersion": 3.4
-    },
-    {
-      "parameters": {
         "operation": "pdf",
         "binaryPropertyName": "={{ $json['Resume/CV'] ? 'Resume/CV' : 'data' }}",
         "options": {
           "maxPages": 10
-        },
-        "continueOnFail": true
+        }
       },
       "id": "fcc5a07c-5d51-410a-8405-869eb54ade06",
       "name": "Extract Resume Content",
@@ -342,33 +159,7 @@
         1008,
         304
       ],
-      "typeVersion": 1,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "text",
-              "value": "Could not extract text from the uploaded file. Please check the file format and try again."
-            },
-            {
-              "name": "extraction_status",
-              "value": "FAILED"
-            }
-          ]
-        }
-      },
-      "id": "6e5d3b99-c0c1-4a83-a26f-453bd0c58a21",
-      "name": "Handle Extraction Error",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        1008,
-        160
-      ],
-      "typeVersion": 3.4
+      "typeVersion": 1
     },
     {
       "parameters": {
@@ -643,12 +434,12 @@
           "value": {
             "Application_Date": "={{ $now.format('yyyy-MM-dd') }}",
             "Timestamp": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }}",
-            "Candidate_Name": "={{ $('Production Application Form').item.json['Full Name'] || 'Unknown' }}",
-            "Email": "={{ $('Production Application Form').item.json['Email Address'] || 'Not provided' }}",
-            "Phone": "={{ $('Production Application Form').item.json['Phone Number'] || 'Not provided' }}",
-            "Position_Applied": "={{ $('Production Application Form').item.json['Position Applied For'] || 'General Application' }}",
-            "Experience_Years": "={{ Number($('Production Application Form').item.json['Years of Experience'] || '0') }}",
-            "Location": "={{ $('Production Application Form').item.json['Location/City'] || 'Not specified' }}",
+            "Candidate_Name": "={{ $('Candidate Application Form').item.json['Full Name'] || 'Unknown' }}",
+            "Email": "={{ $('Candidate Application Form').item.json['Email Address'] || 'Not provided' }}",
+            "Phone": "={{ $('Candidate Application Form').item.json['Phone Number'] || 'Not provided' }}",
+            "Position_Applied": "={{ $('Candidate Application Form').item.json['Position Applied For'] || 'General Application' }}",
+            "Experience_Years": "={{ $('Candidate Application Form').item.json['Years of Experience'] || 0 }}",
+            "Location": "={{ $('Candidate Application Form').item.json['Location/City'] || 'Not specified' }}",
             "Overall_Score": "={{ $json.output.overall_score || 0 }}",
             "Technical_Score": "={{ $json.output.technical_fit_score || 0 }}",
             "Experience_Score": "={{ $json.output.experience_fit_score || 0 }}",
@@ -659,7 +450,7 @@
             "Areas_of_Concern": "={{ $json.output.areas_of_concern || 'To be determined' }}",
             "Interview_Focus": "={{ $json.output.interview_focus_areas || 'General interview' }}",
             "Next_Steps": "={{ $json.output.next_steps || 'Review required' }}",
-            "Resume_Drive_Link": "={{ $('Production Secure Upload').item.json.webViewLink || 'Not available' }}",
+            "Resume_Drive_Link": "={{ $('Upload Resume to Drive').item.json.webViewLink || 'Not available' }}",
             "AI_Summary": "={{ $('Generate Candidate Summary').item.json.response.text || 'Summary not generated' }}",
             "Status": "Pending Review",
             "Reviewed_By": "",
@@ -701,7 +492,7 @@
           "conditions": [
             {
               "id": "high-score-check",
-              "leftValue": "={{ Number($json.output.overall_score || '0') }}",
+              "leftValue": "={{ $json.output.overall_score || 0 }}",
               "rightValue": 7,
               "operator": {
                 "type": "number",
@@ -725,7 +516,7 @@
       "parameters": {
         "fromEmail": "manav@evio.in",
         "toEmail": "manav.p.raut27@gmail.com",
-        "subject": "🌟 Highly Recommended Candidate: {{ $('Production Application Form').item.json['Full Name'] || 'Unknown Candidate' }} - {{ $('Production Application Form').item.json['Position Applied For'] || 'Engineering Position' }}",
+        "subject": "🌟 Highly Recommended Candidate: {{ $('Candidate Application Form').item.json['Full Name'] || 'Unknown Candidate' }} - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }}",
         "options": {}
       },
       "id": "9ca475d9-9430-4a5d-9859-7a067915246d",
@@ -741,12 +532,9 @@
     {
       "parameters": {
         "fromEmail": "manav@evio.in",
-        "toEmail": "={{ $('Production Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
-        "subject": "Application Received - {{ $('Production Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
-        "text": "Dear {{ $('Production Application Form').item.json['Full Name'] || 'Candidate' }},\n\nThank you for applying for the {{ $('Production Application Form').item.json['Position Applied For'] || 'Engineering Position' }} position at Evio Pvt Ltd.\n\nYour application has been received successfully and is currently under review by our HR team. Your application reference number is {{ $json.application_id }}.\n\nWhat happens next:\n1. Our team will review your application within 48 hours\n2. Shortlisted candidates will be contacted for the first interview round\n3. The entire process typically takes 1-2 weeks\n\nPlease keep this email for your records. If you have any questions about your application, please contact us at hr@evio-industrial.com and include your reference number.\n\nBest regards,\nHR Team\nEvio Pvt Ltd\nhttps://www.evio-industrial.com\n",
-        "options": {
-          "htmlToText": true
-        }
+        "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
+        "subject": "Application Received - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
+        "options": {}
       },
       "id": "bc7f6a8e-f1b0-4b28-aab1-e15a82a1a862",
       "name": "Send Candidate Confirmation",
@@ -761,8 +549,8 @@
     {
       "parameters": {
         "fromEmail": "manav@evio.in",
-        "toEmail": "={{ $('Production Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
-        "subject": "❌ Application Issue - {{ $('Production Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
+        "toEmail": "={{ $('Candidate Application Form').item.json['Email Address'] || 'hr@evio-industrial.com' }}",
+        "subject": "❌ Application Issue - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Engineering Position' }} | Evio Pvt Ltd",
         "options": {}
       },
       "id": "a26a2880-8e17-41cd-a4b9-9b7709453456",
@@ -779,7 +567,7 @@
       "parameters": {
         "fromEmail": "manav@evio.in",
         "toEmail": "manav.p.raut27@gmail.com",
-        "subject": "⚠️ No Matching Job Role Found - {{ $('Production Application Form').item.json['Position Applied For'] || 'Unknown Position' }}",
+        "subject": "⚠️ No Matching Job Role Found - {{ $('Candidate Application Form').item.json['Position Applied For'] || 'Unknown Position' }}",
         "options": {}
       },
       "id": "f449b0f5-abb8-4b9c-a55f-e9bc3b2875e0",
@@ -969,17 +757,6 @@
       "main": [
         [
           {
-            "node": "Application ID Generator",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Application ID Generator": {
-      "main": [
-        [
-          {
             "node": "Extract Resume Content",
             "type": "main",
             "index": 0
@@ -993,36 +770,6 @@
       ]
     },
     "Extract Resume Content": {
-      "main": [
-        [
-          {
-            "node": "Extract Technical Profile",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Extract Personal Details",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Production Job Requirements",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ],
-      "error": [
-        [
-          {
-            "node": "Handle Extraction Error",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Handle Extraction Error": {
       "main": [
         [
           {
@@ -1220,7 +967,7 @@
       ]
     }
   },
-  "active": true,
+  "active": false,
   "settings": {
     "executionOrder": "v1"
   },
