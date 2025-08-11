@@ -35,7 +35,7 @@
                     "name": "Senior Electrical Engineer"
                   },
                   {
-                    "value": "Automation Engineer",
+                    "value": "  ",
                     "name": "Automation Engineer"
                   },
                   {
@@ -186,7 +186,7 @@
           "conditions": [
             {
               "id": "resume-exists",
-              "leftValue": "={{ Array.isArray($json['Resume/CV']) ? $json['Resume/CV'][0] : ($json['Resume/CV'] || $json.name || $json.data) }}",
+              "leftValue": "={{ Array.isArray($json['Resume/CV']) ? JSON.stringify($json['Resume/CV'][0]) : ($json['Resume/CV'] ? JSON.stringify($json['Resume/CV']) : ($json.name || $json.data || '')) }}",
               "rightValue": "",
               "operator": {
                 "type": "string",

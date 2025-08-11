@@ -1,0 +1,41 @@
+# Opal AI Prompt for n8n HR Workflow Audit
+
+## Context
+I've built an HR application processing system in n8n that handles job applications submitted through an HTML form. The workflow includes resume processing, AI analysis of candidate profiles, and integration with Google services (Drive and Sheets). The system is experiencing some technical issues with form submissions.
+
+## Current Workflow Components
+- Form trigger node with webhookId for accepting applications
+- File upload handling for resumes (PDF/DOC/DOCX)
+- Security validation for form inputs
+- Data normalization and processing
+- Google Drive integration for storing resumes
+- Google Sheets integration for storing application data
+- AI-based resume content extraction and analysis (using Gemini AI)
+- Candidate scoring and evaluation system
+- Email notifications to both applicants and HR
+
+## Technical Issues I Need Help With
+1. **Form Data Type Handling**: The workflow is receiving all form data as strings, but some IF nodes expect numbers or booleans. I've updated the workflow to use convertTypes=true, but want to verify this approach.
+
+2. **File Upload Processing**: Files from the form are coming in as arrays of objects (e.g., "Resume/CV": [{filename: "resume.pdf", mimetype: "application/pdf", size: 162004}]) rather than single objects. I've updated the expressions to handle both formats using Array.isArray() checks.
+
+3. **Error Handling Improvements**: I want to improve how the workflow handles various error conditions (failed file uploads, extraction errors, etc.).
+
+4. **Performance Optimization**: The workflow performs multiple AI operations. Are there ways to optimize this for better performance?
+
+5. **Security Enhancements**: What additional security measures should be implemented for handling applicant data in compliance with regulations?
+
+## Specific Questions
+1. What's the most robust way to handle file uploads in n8n when they can come in different formats?
+2. How can I implement better error logging and monitoring for this workflow?
+3. What are best practices for handling sensitive candidate information in the workflow?
+4. How can I make the workflow more maintainable as it grows in complexity?
+5. What testing strategies would you recommend for this kind of workflow?
+
+## Additional Information
+- n8n version: 1.9.0
+- The workflow processes approximately 20-30 applications per day
+- Integration points include: HTML forms, Google Drive, Google Sheets, and Google Gemini AI
+- The workflow needs to be GDPR compliant
+
+Please provide specific code examples and best practices where applicable.
